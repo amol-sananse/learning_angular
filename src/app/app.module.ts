@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home.component';
-import { AboutComponent } from './about.component';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   imports: [
@@ -11,8 +10,7 @@ import { AboutComponent } from './about.component';
   ],
   declarations: [
     AppComponent,
-    HomeComponent,
-    AboutComponent
+    ProductsComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -4,10 +4,8 @@ import { Component } from '@angular/core';
     selector: 'my-app',
     template: `
         <div class="container">
-            Welcome to angular
-            <home></home>
-            <about></about>
-         </div>
+            <prod-comp></prod-comp>
+        </div>
         
     `
 })
