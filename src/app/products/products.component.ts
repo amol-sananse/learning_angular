@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 
 export class ProductsComponent {
+    productTitle:string = 'Product Listing';
+    showImage:boolean = true;
+    showProductListing:boolean = true;
+    filterData:string;
     products:any[] = [
         {
             "_id":"5a05dacc734d1d68d42d31f3",
@@ -64,4 +68,9 @@ export class ProductsComponent {
             "imageUrl":"http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
         }
     ];
+    
+    toggleImage(): void 
+    {
+        this.showImage = !this.showImage;
+    }
 }

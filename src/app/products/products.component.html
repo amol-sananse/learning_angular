@@ -1,36 +1,37 @@
 <div class="container">
-    <div class="well well-sm text-center">
-        <strong>Search</strong>&nbsp;&nbsp;<input type="text" placeholder="Search" class="search">
+    <div class="row padding-lf-15">
+        <h3>{{productTitle}}</h3>
     </div>
-    <div id="products" class="row list-group">
-        <div class="item  col-xs-3 col-lg-3" *ngFor="let product of products">
+    <div class="well well-sm">
+        <strong>Search</strong>&nbsp;&nbsp;
+        <input type="text" placeholder="Search" class="search" [(ngModel)]="filterData">
+        <a href="javascript:void(0);" (click)="toggleImage();">{{ showImage ? 'Hide Images' : 'Show Images' }}</a>
+    </div>
+    <div class="row padding-lr-15">Search For: {{filterData}}</div><br>
+    <div id="products" class="row list-group" *ngIf="showProductListing">        
+        <div class="item  col-xs-3 col-lg-3" *ngFor="let product of products | productFilter:filterData">
             <div class="thumbnail">
                 <div class="image-box text-center">
-                    <img class="group list-group-image" [src]="product.imageUrl" alt="" />
+                    <img class="group list-group-image" [src]="product.imageUrl" alt="{{product.productName}}" *ngIf="showImage" />
                 </div>
                 <div class="caption">
                     <div class="row">
                         <div class="col-xs-12 col-md-12">
-                            <h4 class="group inner list-group-item-heading">{{product.productName}}</h4>
+                            <h4 class="group inner list-group-item-heading">{{product.productName|myUpper}}</h4>
                         </div>
                     </div>  
-                    <p class="group inner list-group-item-text">{{product.productCode}}</p>                  
-                    <p class="group inner list-group-item-text description">{{product.description}}</p>
+                    <p class="group inner list-group-item-text description">{{product.productCode}}: {{product.description}}</p>
                     <div class="row">
-                        <div class="col-xs-12 col-md-10">
+                        <div class="col-xs-12 col-md-7">
                             <div><i>{{product.releaseDate}}</i></div>
+                            <star-comp [rating]="product.starRating"></star-comp>
                         </div>
-                        <div class="col-xs-12 col-md-2 text-right">
-                            <p class="group inner list-group-item-text">{{product.starRating}}</p>
+                        <div class="col-xs-12 col-md-5 text-right">
+                            <p class="lead" [ngStyle]="{'color':product.price<30?'red':'blue'}">{{product.price|currency}}</p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-md-6">
-                            <p class="lead">${{product.price}}</p>
-                        </div>
-                        <div class="col-xs-12 col-md-6">
-                            <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
-                        </div>
+                    <div class="row padding-lr-15">
+                        <a class="btn btn-success btn-add-to-cart" href="http://www.jquery2dotnet.com">Add to cart</a>
                     </div>
                 </div>
             </div>

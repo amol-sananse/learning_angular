@@ -1,15 +1,21 @@
 .glyphicon { margin-right:5px; }
+.btn-add-to-cart {
+    width: 100%;
+}
 .thumbnail
 {
     margin-bottom: 20px;
-    padding: 20px;
+    padding: 5px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
-    height: 400px;
+    height: 370px;
 }
 .description {
-    height: 50px;
+    height: 30px;
+}
+.padding-lr-15 {
+    padding: 0 15px;
 }
 .image-box {
     height: 180px;
