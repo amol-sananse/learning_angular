@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row padding-lf-15">
+        <h3>{{musicTitle}}</h3>
+    </div>
+    <div class="well well-sm">
+        <strong>Search</strong>&nbsp;&nbsp;
+        <input type="text" placeholder="Search" class="search" [(ngModel)]="filterData">
+        <a href="javascript:void(0);" (click)="toggleImage();">{{ showImage ? 'Hide Images' : 'Show Images' }}</a>
+    </div>
+    <div class="row padding-lr-15">Search For: {{filterData}}</div><br>
+    <div id="products" class="row list-group" *ngIf="showMusicListing">        
+        <div class="item  col-xs-3 col-lg-3" *ngFor="let artist of music">
+            <div class="thumbnail">
+                <div class="image-box text-center">
+                    <img class="group list-group-image" [src]="artist.cover" alt="{{artist.name}}" *ngIf="showImage" />
+                </div>
+                <div class="caption">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <h4 class="group inner list-group-item-heading">{{artist.name}}</h4>
+                        </div>
+                    </div>  
+                    <p class="group inner list-group-item-text description">{{artist.bio}}</p>
+                    <div class="row padding-lr-15" *ngFor="let album of artist.albums" style="border-bottom:1px solid grey">
+                        <div class="col-md-6">{{album.title}}</div>
+                        <div class="col-md-6">{{album.price|currency}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
