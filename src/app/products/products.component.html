@@ -18,7 +18,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-md-12">
                             <h4 class="group inner list-group-item-heading">
-                                <a [routerLink]="['/product', product.productId]">{{product.productName|myUpper}}</a>
+                                <a [routerLink]="['/product', product.productId]" [queryParams]="{__id:product.id,productId:product.productId,productName:product.productName,productCode:product.productCode,releaseDate:product.releaseDate,description:product.description,price:product.price,starRating:product.starRating,imageUrl:product.imageUrl}">{{product.productName|myUpper}}</a>
                             </h4>
                         </div>
                     </div>  

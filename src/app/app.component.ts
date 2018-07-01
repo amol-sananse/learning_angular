@@ -18,8 +18,10 @@ import { Component } from '@angular/core';
             <div>
                 <router-outlet></router-outlet>
             </div>
+            <div class="row text-center" style="height:100px; margin-top:100px;">
+                <a [routerLink]="['/home']">Home</a>&nbsp;|&nbsp;<a [routerLink]="['/orders']">Orders</a>&nbsp;|&nbsp;<a [routerLink]="['/product']">Products</a>&nbsp;|&nbsp;<a [routerLink]="['/music']">Music</a>
+            </div>
         </div>
-        
     `
 })
 export class AppComponent { }
