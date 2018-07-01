@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="row padding-lf-15">
+<div>
+    <div class="row padding-lr-15">
         <h3>{{musicTitle}}</h3>
     </div>
     <div class="well well-sm">
@@ -9,10 +9,10 @@
     </div>
     <div class="row padding-lr-15">Search For: {{filterData}}</div><br>
     <div id="products" class="row list-group" *ngIf="showMusicListing">        
-        <div class="item  col-xs-3 col-lg-3" *ngFor="let artist of music">
+        <div class="item  col-xs-3 col-lg-3" *ngFor="let artist of music | musicFilterPipe:filterData">
             <div class="thumbnail">
                 <div class="image-box text-center">
-                    <img class="group list-group-image" alt="{{artist.name}}" *ngIf="showImage" />
+                    <img class="group list-group-image" src="../assets/cover/jimi_hendrix.jpg" alt="{{artist.name}}" *ngIf="showImage" />
                 </div>
                 <div class="caption">
                     <div class="row">

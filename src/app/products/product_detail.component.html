@@ -1,0 +1,31 @@
+<div>
+    <div class="col-md-4">
+        <img [src]="product.imageUrl">
+    </div>
+    <div class="col-md-8">
+        <div class="row">
+            <div><h1>Product ID: {{product.productId}}</h1></div>
+        </div>
+        <div class="row">
+            <div><h1>{{product.productName}}</h1></div>
+        </div>
+        <div class="row">
+            <div><h2>{{product.productCode}}</h2></div>
+        </div>
+        <div class="row">
+            <div><h3>{{product.description}}</h3></div>
+        </div>
+        <br>
+        <div class="row">
+            <div>{{product.releaseDate}}</div>
+        </div>
+        <br>
+        <div class="row">
+            <star-comp [rating]="product.starRating"></star-comp>
+        </div>
+        <div class="row">
+            <p class="lead">{{product.price | currency}}</p>
+            <a class="btn btn-success btn-add-to-cart" href="http://www.jquery2dotnet.com">Add to cart</a>
+        </div>
+    </div>
+</div>

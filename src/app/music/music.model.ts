@@ -1,13 +1,13 @@
 export interface IMusic {
     _id: string,
-    artistName: string,
-    artistCover: string,
-    artistBio: string,
+    name: string,
+    cover: string,
+    bio: string,
     albums: {
         albumId: string,
-        albumTitle: string,
-        albumYear: number,
-        albumCover: string,
-        albumPrice: number 
+        title: string,
+        year: number,
+        cover: string,
+        price: number 
     }
 }
