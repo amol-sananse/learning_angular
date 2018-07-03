@@ -12,6 +12,7 @@ import { NotFoundComponent } from './shared/notfound.component';
 import { MusicComponent } from './music/music.component';
 import { MusicService } from './music/music.service';
 import { ProductModule } from './products/product.module';
+import { EmployeeComponent } from './employee/employee.component';
 
 
 @NgModule({
@@ -20,11 +21,12 @@ import { ProductModule } from './products/product.module';
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-      {path: 'home', component: HomeComponent},
-      {path: 'order', component: OrderComponent},
-      {path: 'music', component: MusicComponent},
-      {path: '', redirectTo: 'product', pathMatch: 'full'},
-      {path: '**', component: NotFoundComponent}
+      { path: 'home', component: HomeComponent },
+      { path: 'order', component: OrderComponent },
+      { path: 'music', component: MusicComponent },
+      { path: 'employee', component: EmployeeComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: '**', component: NotFoundComponent }
       
     ]),
     ProductModule
@@ -35,7 +37,8 @@ import { ProductModule } from './products/product.module';
     OrderComponent,
     MusicFilterPipe,
     NotFoundComponent,
-    MusicComponent
+    MusicComponent,
+    EmployeeComponent
   ],
   bootstrap: [AppComponent],
   providers: [
